@@ -5,3 +5,6 @@ def jogar():
     print("+-------------------------------+\n")
 
     print("Fim de jogo.")
+
+if(__name__ == "__main__"):
+    jogar()
