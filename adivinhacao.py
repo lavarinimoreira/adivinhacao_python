@@ -1,6 +1,18 @@
-
+#---------------------------------------------------------------------------+
+#                                                                           #
+#   adivinhacao.py                                                          #
+#                                                                           #
+#   Este programa tem como principal objetivo estudar as funcionalidades    #
+#   da linguagem Python. Para tal, neste arquivo foi utilizado o conceito   #
+#   do jogo de adivinhação, que consiste na geração de um número aleatório  #
+#   entre 1 e 100 que terá que ser decifrado por meio de tentativas.        #
+#                                                                           #
+#   Autor: Gabriel Lavarini <lavarinimoreira@gmail.com>                     #
+#   github.com/lavarinimoreira                                              #
+#                                                                           #
+#---------------------------------------------------------------------------+
 import random
-def jogar_adivinhacao():
+def jogar():
     print("+-------------------------------------+")
     print("#  Bem vindo ao jogo de Adivinhação!  #")
     print("+-------------------------------------+\n")
