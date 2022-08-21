@@ -24,11 +24,11 @@ print("\n[1] - Forca\n[2] - Adivinhação\n[3] - Sair")
 
 condicao = int(input("Selecione um jogo: "))
 
-if(jogo == 1):
+if(condicao == 1):
     print("Jogando forca")
-    jogar_forca()
-elif(jogo == 2):
+    forca.jogar()
+elif(condicao == 2):
     print("Jogando adivinhação")
-    jogar_adivinhacao()
+    adivinhacao.jogar()
 
 print("Encerrando programa.")
