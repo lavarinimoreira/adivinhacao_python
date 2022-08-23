@@ -10,12 +10,25 @@
 #   github.com/lavarinimoreira                                              #
 #                                                                           #
 #---------------------------------------------------------------------------+
+
+import random
 def jogar():
     print("+-------------------------------+")
     print("#  Bem vindo ao jogo da Forca!  #")
     print("+-------------------------------+\n")
 
-    palavra_secreta = "maçã".upper()
+    arquivo = open("palavras.txt","r")
+    palavras = []
+
+    for linha in arquivo:
+        linha = linha.strip()
+        palavras.append(linha)
+
+    arquivo.close()
+
+    indice_aleatorio = random.randrange(0, len(palavras))
+    palavra_secreta = palavras[indice_aleatorio].upper()
+
     letras_acertadas = ["_" for letra in palavra_secreta]
 
     enforcou = False
