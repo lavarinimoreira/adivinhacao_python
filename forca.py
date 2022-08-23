@@ -38,6 +38,8 @@ def jogar():
                 index += 1
         else:
             erros += 1
+            print("A letra '{}' não está na palavra.".format(chute))
+            print("{} tentativas restando.".format(tentativas - erros))
 
         enforcou = erros == tentativas
         acertou = "_" not in letras_acertadas
