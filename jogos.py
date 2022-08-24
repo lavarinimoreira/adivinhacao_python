@@ -11,7 +11,7 @@
 #   Autor: Gabriel Lavarini <lavarinimoreira@gmail.com>                     #
 #   github.com/lavarinimoreira                                              #
 #                                                                           #
-#---------------------------------------------------------------------------#
+#---------------------------------------------------------------------------+
 
 import forca
 import adivinhacao

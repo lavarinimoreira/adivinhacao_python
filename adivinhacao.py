@@ -23,9 +23,7 @@ def jogar():
 
     for rodada in range(1, total_de_tentativas + 1):
         print("Tentativa {} de {}.".format(rodada, total_de_tentativas))
-        chute_str = input("Digite um número entre 1 e 100: ")
-        print("Você digitou: ", chute_str)
-        chute = int(chute_str)
+        chute = getting_chute()
 
         if(chute < 1 or chute > 100):
             print("Você deve digitar um número entre 1 e 100!\n")
@@ -66,6 +64,18 @@ def switch_nivel(nivel):
     elif (nivel == 2):
         total_de_tentativas = 10
     return total_de_tentativas
+
+#--------------------------------------------------------------+
+#   getting_chute()                                            |
+#   This function receives an input attempt number             |
+#   from the user, convert the string to int and return        |
+#   the number that the user has forneced.                     |
+#--------------------------------------------------------------+
+def getting_chute():
+    chute_str = input("Digite um número entre 1 e 100: ")
+    print("Você digitou: ", chute_str)
+    chute = int(chute_str)
+    return chute
 
 if(__name__ == "__main__"):
     jogar()
