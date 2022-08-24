@@ -13,23 +13,13 @@
 #---------------------------------------------------------------------------+
 import random
 def jogar():
-    print("+-------------------------------------+")
-    print("#  Bem vindo ao jogo de Adivinhação!  #")
-    print("+-------------------------------------+\n")
+    
+    imprime_mensagem_inicial()
+    nivel = nivel_dificuldade()
 
-    numero_secreto = random.randrange(1,101)
-    total_de_tentativas = 0
+    numero_secreto = gera_numero_secreto()
+    total_de_tentativas = switch_nivel(nivel)
     pontos = 1000
-
-    print("[1] - Fácil\n[2] - Médio\n[3] - Difícil")
-    nivel = int(input("Selecione o nível de dificuldade: "))
-
-    if(nivel == 1):
-        total_de_tentativas = 15
-    elif(nivel == 2):
-        total_de_tentativas = 10
-    else:
-        total_de_tentativas = 5
 
     for rodada in range(1, total_de_tentativas + 1):
         print("Tentativa {} de {}.".format(rodada, total_de_tentativas))
@@ -56,8 +46,26 @@ def jogar():
 
             pontos_perdidos = abs(numero_secreto - chute)
             pontos = pontos - pontos_perdidos
-
-    print("Fim do jogo")
+def imprime_mensagem_inicial():
+    print("+-------------------------------------+")
+    print("#  Bem vindo ao jogo de Adivinhação!  #")
+    print("+-------------------------------------+\n")
+def gera_numero_secreto():
+    return random.randrange(1,101)
+def nivel_dificuldade():
+    print("[1] - Fácil\n[2] - Médio\n[3] - Difícil")
+    nivel = int(input("Selecione o nível de dificuldade: "))
+    if(nivel > 3 or nivel < 1):
+        return 3 # Retornando o nível difícil caso a entrada de dados seja feita por um valor inválido...
+    else:
+        return nivel
+def switch_nivel(nivel):
+    total_de_tentativas = 5
+    if (nivel == 1):
+        total_de_tentativas = 15
+    elif (nivel == 2):
+        total_de_tentativas = 10
+    return total_de_tentativas
 
 if(__name__ == "__main__"):
     jogar()
