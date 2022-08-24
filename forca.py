@@ -13,23 +13,10 @@
 
 import random
 def jogar():
-    print("+-------------------------------+")
-    print("#  Bem vindo ao jogo da Forca!  #")
-    print("+-------------------------------+\n")
 
-    arquivo = open("palavras.txt","r")
-    palavras = []
-
-    for linha in arquivo:
-        linha = linha.strip()
-        palavras.append(linha)
-
-    arquivo.close()
-
-    indice_aleatorio = random.randrange(0, len(palavras))
-    palavra_secreta = palavras[indice_aleatorio].upper()
-
-    letras_acertadas = ["_" for letra in palavra_secreta]
+    imprime_mensagem_abertura()
+    palavra_secreta = carrega_palavra_secreta()
+    letras_acertadas = inicializa_letras_acertadas(palavra_secreta)
 
     enforcou = False
     acertou  = False
@@ -64,6 +51,31 @@ def jogar():
         print("Perdeu =/")
 
     print("Fim de jogo.")
+
+#---------------------------------------+
+#   Definindo as funções do programa    #
+#---------------------------------------+
+def imprime_mensagem_abertura():
+    print("+-------------------------------+")
+    print("#  Bem vindo ao jogo da Forca!  #")
+    print("+-------------------------------+\n")
+
+def carrega_palavra_secreta():
+    arquivo = open("palavras.txt", "r")
+    palavras = []
+
+    for linha in arquivo:
+        linha = linha.strip()
+        palavras.append(linha)
+
+    arquivo.close()
+
+    indice_aleatorio = random.randrange(0, len(palavras))
+    palavra_secreta = palavras[indice_aleatorio].upper()
+    return palavra_secreta
+
+def inicializa_letras_acertadas(palavra):
+    return ["_" for letra in palavra]
 
 if(__name__ == "__main__"):
     jogar()
